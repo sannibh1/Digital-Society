@@ -71,7 +71,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                             if (!obj.getBoolean("error")){
                                 SharedPrefManager.getInstance(getApplicationContext())
                                         .userLogin(
-                                                obj.getLong("mobileno"),
+                                                obj.getString("mobileno"),
                                                 obj.getString("email")
                                         );
                                 startActivity(new Intent(getApplicationContext(), MyProfile.class));

@@ -32,12 +32,7 @@ public class ClubBooking extends AppCompatActivity implements View.OnClickListen
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_club_booking);
 
-        DatePicker datePicker = (DatePicker) findViewById(R.id.bookDate);
-        day = datePicker.getDayOfMonth();
-        month = datePicker.getMonth() + 1;
-        year = datePicker.getYear();
-
-        buttonBookClub = (Button) findViewById(R.id.bookClub);
+        buttonBookClub = (Button) findViewById(R.id.clubSubmit);
 
         progressDialog = new ProgressDialog(this);
         progressDialog.setMessage("Please wait....");
@@ -55,6 +50,10 @@ public class ClubBooking extends AppCompatActivity implements View.OnClickListen
     private void bookClub() {
 
         final String mobileno = SharedPrefManager.getInstance(this).getMobileNo();
+        DatePicker datePicker = (DatePicker) findViewById(R.id.bookClubDate);
+        day = datePicker.getDayOfMonth();
+        month = datePicker.getMonth() + 1;
+        year = datePicker.getYear();
 
         progressDialog.show();
 
@@ -70,7 +69,7 @@ public class ClubBooking extends AppCompatActivity implements View.OnClickListen
                             if (!obj.getBoolean("error")){
 
                                 Toast.makeText(getApplicationContext(),obj.getString("message"),Toast.LENGTH_LONG).show();
-                                startActivity(new Intent(getApplicationContext(), MyProfile.class));
+                                //startActivity(new Intent(getApplicationContext(), MyProfile.class));
                                 finish();
                             }else {
                                 Toast.makeText(getApplicationContext(),obj.getString("message"),Toast.LENGTH_LONG).show();
@@ -104,3 +103,4 @@ public class ClubBooking extends AppCompatActivity implements View.OnClickListen
         RequestHandler.getInstance(this).addToRequestQueue(stringRequest);
     }
 }
+//

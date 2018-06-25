@@ -29,11 +29,11 @@ public class SharedPrefManager {
         return mInstance;
     }
 
-    public boolean userLogin(long mobileno, String email){
+    public boolean userLogin(String mobileno, String email){
         SharedPreferences sharedPreferences = mCtx.getSharedPreferences(SHARED_PREF_NAME,Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
 
-        editor.putLong(KEY_MOBILE_NO,mobileno);
+        editor.putString(KEY_MOBILE_NO,mobileno);
         editor.putString(KEY_EMAIL,email);
 
         editor.apply();

@@ -16,7 +16,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <DatePicker
-            android:id="@+id/bookDate"
+            android:id="@+id/bookClubDate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal">

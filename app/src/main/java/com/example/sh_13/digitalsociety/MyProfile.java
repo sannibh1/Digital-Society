@@ -39,6 +39,10 @@ public class MyProfile extends AppCompatActivity implements View.OnClickListener
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()){
+            case R.id.menuMyProfile:
+                Toast.makeText(this,"Ypu Clicked My Profile!!!!",Toast.LENGTH_LONG).show();
+                break;
+
             case R.id.menuMyBookings:
                 Toast.makeText(this,"Ypu Clicked My bookings!!!!",Toast.LENGTH_LONG).show();
                 break;
@@ -58,7 +62,7 @@ public class MyProfile extends AppCompatActivity implements View.OnClickListener
             startActivity(new Intent(this, ClubBooking.class));
         }
         else if(view == buttonGymBooking){
-
+            startActivity(new Intent(this, GymBooking.class));
         }
     }
 }
